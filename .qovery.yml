@@ -1,13 +1,18 @@
+---
 application:
-  name: simple-example-node
-  organization: QoveryCommunity
-  project: getting-started
-  publicly_accessible: true
-  ram: 256MB
+  name: 'mm'
+  project: 'test'
+  organization: 'QoveryCommunity'
+databases:
+  - type: 'POSTGRESQL'
+    name: 'mmdb'
+    version: '13'
+  - type: 'REDIS'
+    name: 'mmredis'
+    version: '6'
 routers:
-- name: main
-  routes:
-  - application_name: simple-example-node
-    paths:
-    - /
-
+  - name: 'main-mm'
+    routes:
+      - application_name: 'mm'
+        paths:
+          - '/'
